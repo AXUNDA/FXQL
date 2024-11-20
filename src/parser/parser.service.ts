@@ -15,6 +15,9 @@ export class ParserService {
     if (!statements || statements.length === 0) {
       throw new BadRequestException('No FXQL statements found.');
     }
+    if (statements.length > 1000) {
+      throw new BadRequestException('maximum number of statements is 10000.');
+    }
 
     const results = await Promise.all(
       statements.map(async (statement, index) => {
