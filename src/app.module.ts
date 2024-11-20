@@ -7,13 +7,13 @@ import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
-    ParserModule,
     ThrottlerModule.forRoot([
       {
-        ttl: 60,
+        ttl: 60000,
         limit: 10,
       },
     ]),
+    ParserModule,
   ],
   controllers: [AppController],
   providers: [
