@@ -29,6 +29,7 @@ export class ParserService {
           /^([A-Z]{3})-([A-Z]{3}) \{\s*BUY (\d+(\.\d+)?)\s*SELL (\d+(\.\d+)?)\s*CAP (\d+)\s*\}$/;
 
         const match = cleanStatement.match(regex);
+
         if (!match) {
           throw new BadRequestException(
             `Invalid FXQL format in statement ${index + 1}. Ensure each statement matches the required structure.`,
