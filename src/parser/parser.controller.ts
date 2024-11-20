@@ -7,7 +7,7 @@ import { FXQLPayloadDto } from './dto/fxql-dto';
 export class ParserController {
   constructor(private readonly parserService: ParserService) {}
   @Post()
-  async parser(@Body() body: FXQLPayloadDto) {
+  async createEntry(@Body() body: FXQLPayloadDto) {
     return this.parserService.createEntry(body.FXQL);
   }
 }
