@@ -15,8 +15,8 @@ datasource db {
 
 model Entry {
   EntryId             String   @id @default(uuid())
-  SourceCurrency      String?
-  DestinationCurrency String?
+  SourceCurrency      String
+  DestinationCurrency String
   SellPrice           Float
   BuyPrice            Float
   CapAmount           Int
